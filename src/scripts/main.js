@@ -22,15 +22,16 @@ const pushNotification = (posTop, posRight, title, description, type) => {
   notification.appendChild(descriptionElement);
 
   // Position the notification
+  notification.style.position = 'fixed';
   notification.style.top = `${posTop}px`;
   notification.style.right = `${posRight}px`;
 
   // Add notification to the document
   document.body.appendChild(notification);
 
-  // Hide notification after 2 seconds using visibility property
+  // Hide notification after 2 seconds using display property
   setTimeout(() => {
-    notification.style.visibility = 'hidden';
+    notification.style.display = 'none';
   }, 2000);
 };
 
